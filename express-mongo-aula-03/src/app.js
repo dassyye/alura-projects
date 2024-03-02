@@ -1,6 +1,8 @@
 import express from 'express'
 import connectionDatabase from './config/db.js'
+
 import bookRouter from './routes/book.js'
+import authorRouter from './routes/author.js'
 
 const app = express()
 
@@ -17,5 +19,6 @@ db.on('error',(err) => {
 })
 
 app.use(bookRouter)
+app.use(authorRouter)
 
 export default app
